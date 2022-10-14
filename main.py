@@ -20,6 +20,10 @@ while True:
         #b = y - mx
         y_intercept = float(y_value) - (float(slope) * float(x_value))
         print(f'y-intercept: 0, {y_intercept}')
+        if y_intercept < 0:
+            print(f'y = {slope}x {y_intercept}')
+        else:
+            print(f'y = {slope}x + {y_intercept}')
 
     #y intercept calculator - uses two points, finds slope, then uses to find y-intercept
     elif command == 'yy':
@@ -36,6 +40,10 @@ while True:
         y_intercept = float(y_value1) - (float(slope) * float(x_value1))
         print(f'y-intercept: 0, {y_intercept}')
         print(f'slope: {slope}')
+        if y_intercept < 0:
+            print(f'y = {slope}x {y_intercept}')
+        else:
+            print(f'y = {slope}x + {y_intercept}')
 
     #x-intercept calculator - uses coordinates and slope to find x-intercept
     elif command == 'x':
