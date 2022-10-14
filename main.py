@@ -2,7 +2,7 @@
 #asks for command
 while True:
     print('''Run a command. Type h and enter for help.''')
-    command = input('>').lower()
+    command = input().lower()
     
     #displays all commands for help
     if command == 'h':
