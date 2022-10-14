@@ -1,87 +1,82 @@
 #y = mx + b
+#asks for command
 while True:
-    print('Call a function. Type h for list of commands.')
+    print('''Run a command. Type h and enter for help.''')
     command = input('>').lower()
     
-    #displays all commands
+    #displays all commands for help
     if command == 'h':
-        print('''Available commands:
-    y - calculates y-intercept using one point and slope
-    yy - calculates y-intercept using two points
-    x - calulates x-intercept using one point and slope
-    xx - calculates x-intercept using two points
-    m - slope calculator from two points''')
-    
-    #y-intercept calculator - uses coordinates and slope to find y-intercept
-    elif command == 'y':
+        print('''
+    Available commands:
+    1 - type in one point and slope, and it will display all information.
+    2 - type in two points, and it will display all information.
+    ''')
+
+
+    #calculator that uses one point and slope
+    elif command == '1':
         x_value = input('x value: ')
         y_value = input('y value: ')
         slope = input('slope: ')
+
+        #calculates y-intercept
         #b = y - mx
         y_intercept = float(y_value) - (float(slope) * float(x_value))
-        print(f'y-intercept: 0, {y_intercept}')
-        if y_intercept < 0:
-            print(f'y = {slope}x {y_intercept}')
-        else:
-            print(f'y = {slope}x + {y_intercept}')
-
-    #y intercept calculator - uses two points, finds slope, then uses to find y-intercept
-    elif command == 'yy':
-        x_value1 = input('x value1: ')
-        y_value1 = input('y value1: ')
-        x_value2 = input('x value2: ')
-        y_value2 = input('y value2: ')
-        #finds slope
-        rise = float(y_value2) - float(y_value1)
-        run = float(x_value2) - float(x_value1)
-        slope = rise / run
-        #uses first point and slope to find y intercept
-        #b = y - mx
-        y_intercept = float(y_value1) - (float(slope) * float(x_value1))
-        print(f'y-intercept: 0, {y_intercept}')
-        print(f'slope: {slope}')
-        if y_intercept < 0:
-            print(f'y = {slope}x {y_intercept}')
-        else:
-            print(f'y = {slope}x + {y_intercept}')
-
-    #x-intercept calculator - uses coordinates and slope to find x-intercept
-    elif command == 'x':
-        x_value = input('x_value: ')
-        y_value = input('y_value: ')
-        slope = input('slope: ')
+        #calculates x-intercept
         #x-intercept = x - (my)
         x_intercept = float(x_value) - (float(slope) * float(y_value))
-        print(f'x-intercept: {x_intercept}, 0')
+        
+        #prints the equation
+        #changes the plus or minus sign depending if slope is positive or negative
+        if y_intercept < 0:
+            print(f'''
+    y = {slope}x {y_intercept}''')
+        else:
+            print(f'''
+    y = {slope}x + {y_intercept}''')
 
-    #x intercept calculator - uses two points, finds slope, then uses to find x-intercept
-    elif command == 'xx':
-        x_value1 = input('x value1: ')
-        y_value1 = input('y value1: ')
-        x_value2 = input('x value2: ')
-        y_value2 = input('y value2: ')
-        #finds slope
+        #prints the y-intercept, x-intercept, and slope
+        print(f'''    y-intercept: 0, {y_intercept}
+    x-intercept: {x_intercept}, 0
+    Slope: {slope}
+    ''')
+
+
+    #y intercept calculator - uses two points, finds slope, then uses to find y-intercept
+    elif command == '2':
+        x_value1 = input('x-value1: ')
+        y_value1 = input('y-value1: ')
+        x_value2 = input('x-value2: ')
+        y_value2 = input('y-value2: ')
+
+        #calculates slope
         rise = float(y_value2) - float(y_value1)
         run = float(x_value2) - float(x_value1)
         slope = rise / run
-        #uses first point and slope to find y intercept
+    
+        #calculates y-intercept
+        #b = y - mx
+        y_intercept = float(y_value1) - (float(slope) * float(x_value1))
+        #calculates x-intercept
         #x-intercept = x - (my)
         x_intercept = float(x_value1) - (float(slope) * float(y_value1))
-        print(f'y-intercept: {x_intercept}, 0')
-        print(f'slope: {slope}')
+        
+        #prints the equation
+        #changes the plus or minus sign depending if slope is positive or negative
+        if y_intercept < 0:
+            print(f'''
+    y = {slope}x {y_intercept}''')
+        else:
+            print(f'''
+    y = {slope}x + {y_intercept}''')
 
-    #slope calculator uses two coordinates to calculate
-    elif command == 'm':
-        x_value1 = input('first coordinate x-value: ')
-        y_value1 = input('first coordinate y-value: ')
-        x_value2 = input('second coordinate x-value: ')
-        y_value2 = input('second coordinate y-value: ')
-        #slope formula: (y2 - y1) / (x2 - x1)
-        rise = float(y_value2) - float(y_value1)
-        run = float(x_value2) - float(x_value1)
-        slope = rise / run
-        print(f'Slope: {slope}')
+        #prints the y-intercept, x-intercept, and slope
+        print(f'''    y-intercept: 0, {y_intercept}
+    x-intercept: {x_intercept}, 0
+    Slope: {slope}
+    ''')
     
+
     #program quitter
     elif command == 'quit' or command == 'q':
         print('bye bye')
@@ -89,4 +84,4 @@ while True:
 
     #if beginning command is not one of the options
     else:
-        print("That's not a command. Try typing h for command list.")
+        print("That's not a command. Try typing h and hit enter for help.")
