@@ -10,6 +10,8 @@ while True:
     Available commands:
     1 - type in one point and slope, and it will display all information.
     2 - type in two points, and it will display all information.
+    x - solver for x using one y-value and slope
+    y - solver for y using one x-value and slope
     ''')
 
 
@@ -75,7 +77,40 @@ while True:
     x-intercept: {x_intercept}, 0
     Slope: {slope}
     ''')
+
+
+    #solver for x using slope and one y-value
+    elif command == 'x':
+        #gets values
+        slope = input('Slope: ')
+        y_intercept = input('y-intercept: ')
+        y_value = input('y: ')
+        
+        #solves for x
+        x_value = (float(y_value) - float(y_intercept)) / float(slope)
+        
+        print(f'''
+    {y_value} = {slope}x + {y_intercept}
+    x = {x_value}
+        ''')
     
+
+    elif command == 'y':
+        #user inputs slope and y-intercept
+        slope = input('slope: ')
+        y_intercept = input('y-intercept: 0, ')
+        x_value = input('x value to plug in: ')
+
+        #y = mx + b
+        #plugs in x and adds y intercept
+        y_value = (float(slope) * float(x_value)) + float(y_intercept)
+        
+        #prints the y value
+        print(f'''
+    y = {slope}x + {y_intercept}
+    y = {y_value}
+        ''')
+
 
     #program quitter
     elif command == 'quit' or command == 'q':
