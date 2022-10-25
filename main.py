@@ -119,4 +119,4 @@ while True:
 
     #if beginning command is not one of the options
     else:
-        print("That's not a command. Try typing h and hit enter for help.")
+        print("That's not a command.")
