@@ -1,3 +1,5 @@
 # LinearFunctionCalculator
 Very useful if you're not particularly in the mood to do your Algebra 1 homework.
-As of 10/13/22 it now displays your slope and the equation even when you just ask for y-intercept.
+It can calculate slope, y-intercept, and x-intercept by either entering two points or just one point and the slope.
+Also, it can solve for x and y if you put the slope and one of them.
+Type in enter after your command, and type "h" and press enter for help in the program.
