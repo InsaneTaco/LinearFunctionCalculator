@@ -8,8 +8,8 @@ while True:
     if command == 'h':
         print('''
     Available commands:
-    1 - type in one point and slope, and it will display all information.
-    2 - type in two points, and it will display all information.
+    1 - type in one point and slope, and it will display all information (both intercepts, slope, and linear equation).
+    2 - type in two points, and it will display all information (both intercepts, slope, and linear equation).
     x - solver for x using one y-value and slope
     y - solver for y using one x-value and slope
     ''')
